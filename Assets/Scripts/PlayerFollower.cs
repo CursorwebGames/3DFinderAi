@@ -12,6 +12,6 @@ public class PlayerFollower : MonoBehaviour
 
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.up);
         transform.localRotation *= rotation;
-        transform.position += direction * speed;
+        transform.position += direction * speed * Time.deltaTime;
     }
 }

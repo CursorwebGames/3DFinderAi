@@ -8,13 +8,11 @@ public class HeadManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        FindObjectOfType<AppleManager>().ChangePosition();
-        //AddSegment();
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("hi!");
+        if (other.CompareTag("Apple"))
+        {
+            FindObjectOfType<AppleManager>().ChangePosition();
+            AddSegment();
+        }
     }
 
 
