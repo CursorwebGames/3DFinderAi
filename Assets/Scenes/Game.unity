@@ -189,7 +189,7 @@ MonoBehaviour:
   validMat: {fileID: 2100000, guid: 5179b9e9f4eff0c44bacafa3fcbc9d32, type: 2}
   invalidMat: {fileID: 2100000, guid: cf3416e01628ea54f80d14930c4d4437, type: 2}
   applesMade: 0
-  maxApples: 25
+  maxApples: 30
 --- !u!1 &472771504
 GameObject:
   m_ObjectHideFlags: 0

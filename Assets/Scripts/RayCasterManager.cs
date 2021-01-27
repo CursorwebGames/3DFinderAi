@@ -68,7 +68,7 @@ public class RayCasterManager : MonoBehaviour
         bool touching = Vector3.Distance(head.position, transform.position) < 3;
         foreach (GameObject tree in trees)
         {
-            if (Vector3.Distance(tree.transform.position, pos) < 1f)
+            if (Vector3.Distance(tree.transform.position, pos) < 2)
             {
                 touching = false;
                 break;
