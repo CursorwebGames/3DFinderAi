@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    void Update()
+    public bool isWon = false;
+
+    private void Update()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        if (!isWon) Cursor.lockState = CursorLockMode.Locked;
+        else Cursor.lockState = CursorLockMode.None;
     }
 }

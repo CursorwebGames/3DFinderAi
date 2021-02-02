@@ -5,6 +5,7 @@ This is the sequel to the original [3D SNEk](https://github.com/CursorwebGames/3
 **Unity Version**: 2020.2.1f1
 
 # Gameplay
-Click to add trees. Try to defeat the snake!
+Click to add trees, WASD to move. Try to defeat the snake!
 
 # Screenshots
+![Snake](Assets/Textures/Logo.png)

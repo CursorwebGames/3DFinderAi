@@ -6,18 +6,19 @@ public class RayCasterManager : MonoBehaviour
 
     public Renderer markerRend; // material for marker
 
+    public MaximumTrees maximum;
+
     public GameObject markerVisible;
     public GameObject tree;
 
     public Transform posMarker;
     public Transform apple;
-    public Transform head;
 
     public Material validMat;
     public Material invalidMat;
 
     public int applesMade; // this must be less than maxApples
-    public int maxApples;
+    public int maxApples; // not quite sure why this is called apples when it is clearly pertaining to trees
 
     private Vector3 pos;
 
@@ -36,6 +37,7 @@ public class RayCasterManager : MonoBehaviour
                 {
                     Instantiate(tree, pos, Quaternion.identity);
                     applesMade++;
+                    maximum.UpdateTrees(applesMade);
                 }
             }
 
@@ -45,6 +47,7 @@ public class RayCasterManager : MonoBehaviour
                 {
                     Destroy(hit.collider.gameObject);
                     applesMade--;
+                    maximum.UpdateTrees(applesMade);
                 }
             }
 
@@ -65,7 +68,7 @@ public class RayCasterManager : MonoBehaviour
         if (Vector3.Distance(pos, apple.position) < 3) return false;
 
         GameObject[] trees = GameObject.FindGameObjectsWithTag("Tree");
-        bool touching = Vector3.Distance(head.position, transform.position) < 3;
+        bool touching = true;
         foreach (GameObject tree in trees)
         {
             if (Vector3.Distance(tree.transform.position, pos) < 2)
